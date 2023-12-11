@@ -146,7 +146,7 @@
         display: block;
         margin: 100px auto;
         padding: 100px auto;
-        border: 5px black;
+        border: 5px solid black;
       }
       button {
         display: block;
@@ -156,7 +156,6 @@
         font-family: "Times New Roman", Times, serif;
         font-size: 30px;
         color: maroon;
-        background-color: FEFEFE08;
         cursor: pointer;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
         border: 5px solid;
@@ -280,7 +279,18 @@
       function infoBouton() {
         let prenom = prompt("Quel est ton prenom?");
         let nom = prompt("Quel est ton nom");
-        alert("Merci " + prenom + ", nous te contacterons bienôt");
+
+        if (prenom && nom) {
+          alert(
+            "Bienvenue, " +
+              prenom +
+              " " +
+              nom +
+              "! Merci de visiter notre site."
+          );
+        } else {
+          alert("Bienvenue sur notre site web !");
+        }
       }
       let cliqueMoi = document.querySelector("button");
       cliqueMoi.addEventListener("click", infoBouton);
